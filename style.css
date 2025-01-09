@@ -1,0 +1,23 @@
+* {
+    font-family: "Lato";
+}
+
+body {
+    background-color: #F0F8FF;
+}
+
+/*Maintenance*/
+.build {
+    display: block;
+    padding: 5%;
+}
+
+.build-explanation {
+    text-align: center;
+}
+
+.barrier {
+    width: 20%;
+    height: 20%;
+    margin: auto;
+}
