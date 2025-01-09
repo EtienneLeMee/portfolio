@@ -1,10 +1,104 @@
 * {
     font-family: "Lato";
+    color: #708090;
 }
 
+
+/*Body*/
 body {
     background-color: #F0F8FF;
+    margin: 0 !important;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+/*Content*/
+#content {
+    flex: 1;
+}
+
+
+/*Header*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-bottom: solid #708090;
+}
+
+header>a {
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+}
+
+header>a[selected] {
+    font-weight: bold;
+}
+
+header>a[selected]::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #708090;
+}
+
+header>a:not([selected]){
+    overflow: hidden;
+}
+
+header>a:not([selected])::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #708090;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+header>a:not([selected]):hover::after ,
+header>a:not([selected]):focus::after {
+    transform: translateX(0);
+}
+
+
+/*Main*/
+main {
+    margin: 5px;
+}
+
+
+/*Footer*/
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    position: relative;
+    height: 50px;
+}
+
+footer a {
+    color: #5D5D5D;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 
 /*Maintenance*/
 .build {
@@ -20,4 +114,47 @@ body {
     width: 20%;
     height: 20%;
     margin: auto;
+}
+
+
+/*CV*/
+.experiences-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.sncf-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #E6E6FA;
+    border-radius: 10px;
+    padding: 10px;
+    width: 55%;
+}
+
+.sncf-text {
+    width: 40%;
+}
+
+.idvirtuelle-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.idvirtuelle-text {
+    order: 1;
+    width: 40%;
+}
+
+.idvirtuelle-card {
+    order: 2;
 }
